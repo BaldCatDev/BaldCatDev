@@ -6,7 +6,7 @@ I am a professional Backend (mostly) Developer and Graphic Designer with over 15
 I specialize in building modular extensions, custom core components, and high-performance server-side architecture. As an advocate for the **"Belt and Suspenders" approach**, I prioritize absolute reliability, predictable execution, and exhaustive automated verification over quick, fragile workarounds.
 
 ### Navigate
-[Core](https://pages.github.com/) | [Featured Projects](https://pages.github.com/) | [Tech Stack](https://pages.github.com/) | [Phylosophy](https://pages.github.com/) 
+[Core](Core Technical Experitse) | [Featured Projects](Featured Projects) | [Tech Stack](Tech Stack and Toolbelt) | [Phylosophy](https://pages.github.com/) 
 
 ### Contact
 
@@ -25,27 +25,42 @@ I specialize in building modular extensions, custom core components, and high-pe
 
 ### ⚙️ Featured Projects
 
-#### 🔹 [Pro100: payment core]
-*A highly optimized, decoupled backend module designed for seamless third-party integration.*
-*   **The Challenge:** Resolving high coupling and performance degradation in standard monolithic system layers.
-*   **The Solution:** Developed a strictly containerized, DI-driven component utilizing robust design patterns to isolate external state.
-*   **Key Highlights:** 90%+ test coverage, strict static analysis integration, and optimized memory footprints under simulated high loads.
-*   *Tech Stack:* [Your Primary Tools, e.g., PHP/Laravel/FastAPI], Docker, PHPUnit/PyTest.
+#### 🔹 PRO100: Payment Core for Insurance company
+*A modular payment processing module integrated with internal accounting software.*
 
-#### 🔹 [Pro100: online insurance creation]
+*   **The Task:** Designing a scalable system to support multiple, fluctuating payment gateways while ensuring strict transaction data consistency across external financial platforms and internal accounting software.
+*   **The Solution:** Developed an API-driven abstraction layer that isolates gateway-specific logic into individual modules managed via an administrative UI. Integrated a dedicated interface for accountants to track logs and generate receipts manually when automated flows required verification.
+*   **Key Highlights & Challenges:**
+    *   **Idempotency & Webhook Protection:** Solved the problem of duplicate external webhooks by implementing a "payment intents" ledger. Incoming events are strictly validated against intermediate states before marking a transaction as completed.
+    *   **Stuck Transactions Handling:** Designed a fallback cron routine to automatically query gateway APIs for pending or unconfirmed transactions, resolving state mismatches without manual intervention.
+    *   **Accounting Integration:** Provided a direct data pipeline to corporate accounting software, processing a stable load of 1,000–2,000 daily transactions within predictable execution limits.
+*   *Tech Stack:* Drupal 8, PHP, MySQL, REST API.
+
+#### 🔹 PRO100: Payment Core for Insurance company
+*Modular payment processing engine integrated with the company's internal accounting system.*
+
+- **Architecture:** a single internal API that payment gateways connect to as separate modules. Integrated LiqPay, Mono, and UPC — enabling/disabling gateways, API keys, and receipt text are configured through the admin panel without code changes.
+- **Duplicate protection:** every webhook was cross-checked against a "payment intent" table before processing, preventing the same payment from being processed twice.
+- **Stuck transactions:** a separate mechanism periodically polled the gateway for status updates on transactions that didn't receive a final response immediately.
+- **Accounting:** synced payments with the company's internal accounting system; a dedicated accountant interface for reviewing payments and generating receipts (receipts were also sent to the customer immediately — electronic receipts weren't yet standard in Ukraine at the time).
+- **Load:** 1,000–2,000 payments processed daily in production.
+
+*Stack:* Drupal 8, PHP, MySQL, REST API
+
+#### [Pro100: online insurance creation]
 *A resilient asynchronous automation service built for real-time data parsing and structured forwarding.*
 *   **The Challenge:** Processing high-velocity data feeds efficiently while maintaining strict filtering templates and low-latency dispatch.
 *   **The Solution:** Implemented a lightweight, event-driven network service utilizing robust message-filtering abstraction layers.
 *   **Key Highlights:** Implemented clean architectural decoupling, allowing templates to be modified without altering the underlying core network routine.
 *   *Tech Stack:* [e.g., Python/FastAPI/Node.js], Asyncio, Docker.
 
-#### 🔹 [Drupal Commerce Universal XML parser:]
+#### [Drupal Commerce Universal XML parser:]
 
-#### 🔹 [Pomogashka: Ukrainian handy-man seek online platform]
+#### [Pomogashka: Ukrainian handy-man seek online platform]
 
-#### 🔹 [::::::::::.com: Canada-wide online handyman search platform]
+#### [::::::::::.com: Canada-wide online handyman search platform] (WIP)
 
-#### 🔹 [zakon.help: laws and official documents user-friendly database (Ukraine)]
+#### [zakon.help: laws and official documents user-friendly database (Ukraine)]
 
 
 ---
@@ -68,4 +83,4 @@ I treat software development as an exact craft. Whether I am architecting a sand
 
 ---
 
-📫 **How to reach me:** dna.ray@gmail.com / @ampersand_i [TG]
+📫 **How to reach me:** [dna.ray@gmail.com](mailto:dna.ray@gmail.com) / @ampersand_i [TG]
