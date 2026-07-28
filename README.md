@@ -62,6 +62,19 @@ I specialize in building modular extensions, custom core components, and high-pe
 
 #### [zakon.help: laws and official documents user-friendly database (Ukraine)]
 
+*A website intended to be a handy tool for those who use state laws on daily basis*
+
+Site has a tons of different features to be implemented. Some prominent ones:
+
+- all state laws are kept in actual state *automatically* by utilising all possible sources (APIs, parsing print versions, parsing HTML versions etc)
+- user can switch document versions (editions) in one click
+- user can comment any law published. Such comments are saved across all later versions
+- user can view a professional lawyers / official comments for each document
+- user can create a bookmarks and have an easy access to them from their Cabinet
+- site Content Managers have a flexible yet powerful taxonomy tools to keep all content in order
+- site Content Managers have a tool to make changes to documents while keeping the original content untouched
+- third party authors can publish their own laws-related books/articles and provide either paid or free access to read them
+*   *Tech Stack:* ![PHP](https://shields.io), ![VUE](https://shields.io)
 
 ---
 
