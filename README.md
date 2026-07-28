@@ -74,7 +74,7 @@ Site has a tons of different features to be implemented. Some prominent ones:
 - site Content Managers have a flexible yet powerful taxonomy tools to keep all content in order
 - site Content Managers have a tool to make changes to documents while keeping the original content untouched
 - third party authors can publish their own laws-related books/articles and provide either paid or free access to read them
-*   *Tech Stack:* ![PHP](https://shields.io), ![VUE](https://shields.io)
+*   *Tech Stack:* ![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square) ![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
 
 ---
 
