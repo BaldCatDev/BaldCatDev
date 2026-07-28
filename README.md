@@ -45,7 +45,7 @@ I specialize in building modular extensions, custom core components, and high-pe
 - **Accounting:** synced payments with the company's internal accounting system; a dedicated accountant interface for reviewing payments and generating receipts (receipts were also sent to the customer immediately — electronic receipts weren't yet standard in Ukraine at the time).
 - **Load:** 1,000–2,000 payments processed daily in production.
 
-*Stack:* Drupal 8, PHP, MySQL, REST API
+*Stack:* ![DRUPAL](https://img.shields.io/badge/DRUPAL-0f5699?style=flat-square) ![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square) ![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square) ![REST API](https://img.shields.io/badge/REST-API-00a6e5?style=flat-square)
 
 #### [Pro100: online insurance creation]
 *A resilient asynchronous automation service built for real-time data parsing and structured forwarding.*
