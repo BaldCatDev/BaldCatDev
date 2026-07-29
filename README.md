@@ -34,7 +34,12 @@ I specialize in building modular extensions, custom core components, and high-pe
     *   **Idempotency & Webhook Protection:** Solved the problem of duplicate external webhooks by implementing a "payment intents" ledger. Incoming events are strictly validated against intermediate states before marking a transaction as completed.
     *   **Stuck Transactions Handling:** Designed a fallback cron routine to automatically query gateway APIs for pending or unconfirmed transactions, resolving state mismatches without manual intervention.
     *   **Accounting Integration:** Provided a direct data pipeline to corporate accounting software, processing a stable load of 1,000–2,000 daily transactions within predictable execution limits.
-*   *Tech Stack:* Drupal 8, PHP, MySQL, REST API.
+
+*Stack:*
+![DRUPAL_8](https://img.shields.io/badge/DRUPAL-8-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
+![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
+![REST API](https://img.shields.io/badge/REST_API-3f51b5?style=flat-square)
 
 #### 🔹 PRO100: Payment Core for Insurance company
 *Modular payment processing engine integrated with the company's internal accounting system.*
@@ -45,20 +50,52 @@ I specialize in building modular extensions, custom core components, and high-pe
 - **Accounting:** synced payments with the company's internal accounting system; a dedicated accountant interface for reviewing payments and generating receipts (receipts were also sent to the customer immediately — electronic receipts weren't yet standard in Ukraine at the time).
 - **Load:** 1,000–2,000 payments processed daily in production.
 
-*Stack:* ![DRUPAL](https://img.shields.io/badge/DRUPAL-0f5699?style=flat-square) ![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square) ![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square) ![REST API](https://img.shields.io/badge/REST-API-00a6e5?style=flat-square)
+*Stack:*
+![DRUPAL_8](https://img.shields.io/badge/DRUPAL-8-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
+![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
+![REST API](https://img.shields.io/badge/REST_API-3f51b5?style=flat-square)
 
-#### [Pro100: online insurance creation]
-*A resilient asynchronous automation service built for real-time data parsing and structured forwarding.*
-*   **The Challenge:** Processing high-velocity data feeds efficiently while maintaining strict filtering templates and low-latency dispatch.
-*   **The Solution:** Implemented a lightweight, event-driven network service utilizing robust message-filtering abstraction layers.
-*   **Key Highlights:** Implemented clean architectural decoupling, allowing templates to be modified without altering the underlying core network routine.
-*   *Tech Stack:* [e.g., Python/FastAPI/Node.js], Asyncio, Docker.
 
-#### [Drupal Commerce Universal XML parser:]
+#### 🔹 [Drupal Commerce Dynamic XML Import & ETL Engine]
+*A configurable data integration module for transforming, filtering, and importing complex XML feeds into CMS entity structures.*
+
+*   **The Challenge:** Ingesting large external XML feeds (standard and proprietary) into a complex e-commerce entity architecture with dozens of cross-referenced fields. The primary constraint was avoiding system timeouts during mass updates while maintaining full CMS entity lifecycle hooks for third-party module compatibility.
+
+*   **The Solution:** Built a customizable ETL framework allowing administrators to map source fields to target entities, define filtering rules, and preview execution state before committing changes.
+
+*   **Key Highlights & Architecture:**
+    *   **Mapping & Transformation Engine:** Implemented an Adapter pattern (Processors) allowing admins to set explicit field-mapping rules and apply real-time data transformations (e.g., formatting price representations, translating values) prior to persistence.
+    *   **Rule-Based Pipeline & Shared Fetching:** Integrated a dynamic filtering layer (filtering by tag presence, multi-value constraints, or numerical thresholds). Multiple import configurations reuse a single XML fetch cycle to minimize redundant network I/O.
+    *   **Safe Execution & Scheduling:** Designed a visual dry-run preview UI to show pending entity creations/modifications before execution. Configured independent execution schedules via standard cron routines and manual triggers.
+
+*   **Engineering Challenges & Solutions:**
+    *   **Performance Bottlenecks:** Resolved CMS memory/timeout limits during mass updates by bypassing heavy ORM abstractions with direct DB operations for non-critical steps, while preserving core entity lifecycles via Batch API and CLI routines (Drush) for module-event integrity.
+    *   **Complex Multi-Entity Architecture:** Handled target data distributed across multiple linked entities (including localized and custom field types) by isolating risky transformations inside dedicated Processor wrappers.
+
+*Stack:*
+![DRUPAL_7](https://img.shields.io/badge/DRUPAL-7-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
+![DRUPAL_COMMERCE](https://img.shields.io/badge/DRUPAL-COMMERCE-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
+![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
 
 #### [Pomogashka: Ukrainian handy-man seek online platform]
 
+*Stack:*
+![DRUPAL_9](https://img.shields.io/badge/DRUPAL-9-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
+![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
+![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
+
 #### [::::::::::.com: Canada-wide online handyman search platform] (WIP)
+
+*Stack:*
+![Laravel](https://img.shields.io/badge/Laravel-f53003?style=flat-square)
+![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
+![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
+![REST API](https://img.shields.io/badge/REST_API-3f51b5?style=flat-square)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-00bcff?style=flat-square)
 
 #### [zakon.help: laws and official documents user-friendly database (Ukraine)]
 
@@ -74,7 +111,11 @@ Site has a tons of different features to be implemented. Some prominent ones:
 - site Content Managers have a flexible yet powerful taxonomy tools to keep all content in order
 - site Content Managers have a tool to make changes to documents while keeping the original content untouched
 - third party authors can publish their own laws-related books/articles and provide either paid or free access to read them
-*   *Tech Stack:* ![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square) ![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
+
+*Stack:*
+![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
+![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
+![YII](https://img.shields.io/badge/Yii_PHP-83c933?style=flat-square)
 
 ---
 
