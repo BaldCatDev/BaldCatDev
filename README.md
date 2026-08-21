@@ -1,140 +1,79 @@
-## Hi, I'm Andrii
+## Andrii — Backend Developer
 
-I am a professional Backend (mostly) Developer and Graphic Designer with over 15 years of experience in web development. Over the years, my focus has shifted from simply writing code to architecting highly reliable, evolutionary modular systems.
+Fifteen years in PHP. I build the parts of a product that have to be right: money, state,
+and the rules that decide who is allowed to do what.
 
+Most of my work has been systems where the hard problem isn't the interface — a wallet where
+two concurrent charges must not interleave, a legal reference that is wrong if it is a week
+stale, a contract that must still mean what it meant on the day it was signed. Deep in Drupal,
+currently working in Laravel.
 
-I specialize in building modular extensions, custom core components, and high-performance server-side architecture. As an advocate for the **"Belt and Suspenders" approach**, I prioritize absolute reliability, predictable execution, and exhaustive automated verification over quick, fragile workarounds.
+<!-- ЗАПОЛНИТЬ ПЕРЕД ПУБЛИКАЦИЕЙ — см. список вопросов
+**Available for remote work** · UTC+2 · full-time or contract · English B2
+-->
 
-### Navigate
-[Core](Core Technical Experitse) | [Featured Projects](Featured Projects) | [Tech Stack](Tech Stack and Toolbelt) | [Phylosophy](https://pages.github.com/) 
-
-### Contact
-
-✉️ dna.ray@gmail.com | tg: @amersand_i
-
-
----
-
-### 🚀 Core Technical Expertise
-
-*   **Backend Architecture & Paradigms:** Clean Architecture, Domain-Driven Design (DDD), strict SOLID compliance, Dependency Injection (DI), Data Transfer Objects (DTOs), and paranoid programming patterns.
-*   **Performance & Optimization:** Comprehensive refactoring, query optimization, caching strategies, and bottleneck elimination.
-*   **Infrastructure & Environments:** Containerized sandboxes (Docker), robust local DNS infrastructure configurations, automated workflows, and complex multi-environment management.
-*   -------
-*   **Visual & Interface Design:** Professional asset creation, UI/UX optimization, motion design, and industrial aesthetics (Photoshop, Cinema 4D).
-
-### ⚙️ Featured Projects
-
-#### 🔹 PRO100: Payment Core for Insurance company
-*A modular payment processing module integrated with internal accounting software.*
-
-*   **The Task:** Designing a scalable system to support multiple, fluctuating payment gateways while ensuring strict transaction data consistency across external financial platforms and internal accounting software.
-*   **The Solution:** Developed an API-driven abstraction layer that isolates gateway-specific logic into individual modules managed via an administrative UI. Integrated a dedicated interface for accountants to track logs and generate receipts manually when automated flows required verification.
-*   **Key Highlights & Challenges:**
-    *   **Idempotency & Webhook Protection:** Solved the problem of duplicate external webhooks by implementing a "payment intents" ledger. Incoming events are strictly validated against intermediate states before marking a transaction as completed.
-    *   **Stuck Transactions Handling:** Designed a fallback cron routine to automatically query gateway APIs for pending or unconfirmed transactions, resolving state mismatches without manual intervention.
-    *   **Accounting Integration:** Provided a direct data pipeline to corporate accounting software, processing a stable load of 1,000–2,000 daily transactions within predictable execution limits.
-
-*Stack:*
-![DRUPAL_8](https://img.shields.io/badge/DRUPAL-8-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
-![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
-![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
-![REST API](https://img.shields.io/badge/REST_API-3f51b5?style=flat-square)
-
-#### 🔹 PRO100: Payment Core for Insurance company
-*Modular payment processing engine integrated with the company's internal accounting system.*
-
-- **Architecture:** a single internal API that payment gateways connect to as separate modules. Integrated LiqPay, Mono, and UPC — enabling/disabling gateways, API keys, and receipt text are configured through the admin panel without code changes.
-- **Duplicate protection:** every webhook was cross-checked against a "payment intent" table before processing, preventing the same payment from being processed twice.
-- **Stuck transactions:** a separate mechanism periodically polled the gateway for status updates on transactions that didn't receive a final response immediately.
-- **Accounting:** synced payments with the company's internal accounting system; a dedicated accountant interface for reviewing payments and generating receipts (receipts were also sent to the customer immediately — electronic receipts weren't yet standard in Ukraine at the time).
-- **Load:** 1,000–2,000 payments processed daily in production.
-
-*Stack:*
-![DRUPAL_8](https://img.shields.io/badge/DRUPAL-8-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
-![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
-![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
-![REST API](https://img.shields.io/badge/REST_API-3f51b5?style=flat-square)
-
-
-#### 🔹 [Drupal Commerce Dynamic XML Import & ETL Engine]
-*A configurable data integration module for transforming, filtering, and importing complex XML feeds into CMS entity structures.*
-
-*   **The Challenge:** Ingesting large external XML feeds (standard and proprietary) into a complex e-commerce entity architecture with dozens of cross-referenced fields. The primary constraint was avoiding system timeouts during mass updates while maintaining full CMS entity lifecycle hooks for third-party module compatibility.
-
-*   **The Solution:** Built a customizable ETL framework allowing administrators to map source fields to target entities, define filtering rules, and preview execution state before committing changes.
-
-*   **Key Highlights & Architecture:**
-    *   **Mapping & Transformation Engine:** Implemented an Adapter pattern (Processors) allowing admins to set explicit field-mapping rules and apply real-time data transformations (e.g., formatting price representations, translating values) prior to persistence.
-    *   **Rule-Based Pipeline & Shared Fetching:** Integrated a dynamic filtering layer (filtering by tag presence, multi-value constraints, or numerical thresholds). Multiple import configurations reuse a single XML fetch cycle to minimize redundant network I/O.
-    *   **Safe Execution & Scheduling:** Designed a visual dry-run preview UI to show pending entity creations/modifications before execution. Configured independent execution schedules via standard cron routines and manual triggers.
-
-*   **Engineering Challenges & Solutions:**
-    *   **Performance Bottlenecks:** Resolved CMS memory/timeout limits during mass updates by bypassing heavy ORM abstractions with direct DB operations for non-critical steps, while preserving core entity lifecycles via Batch API and CLI routines (Drush) for module-event integrity.
-    *   **Complex Multi-Entity Architecture:** Handled target data distributed across multiple linked entities (including localized and custom field types) by isolating risky transformations inside dedicated Processor wrappers.
-
-*Stack:*
-![DRUPAL_7](https://img.shields.io/badge/DRUPAL-7-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
-![DRUPAL_COMMERCE](https://img.shields.io/badge/DRUPAL-COMMERCE-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
-![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
-![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
-
-#### [Pomogashka: Ukrainian handy-man seek online platform]
-
-*Stack:*
-![DRUPAL_9](https://img.shields.io/badge/DRUPAL-9-NO?style=flat-square&labelColor=0f5699&color=8a8a8a)
-![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
-![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
-![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
-
-#### [::::::::::.com: Canada-wide online handyman search platform] (WIP)
-
-*Stack:*
-![Laravel](https://img.shields.io/badge/Laravel-f53003?style=flat-square)
-![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
-![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
-![MySQL](https://img.shields.io/badge/MySQL-00a6e5?style=flat-square)
-![REST API](https://img.shields.io/badge/REST_API-3f51b5?style=flat-square)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-00bcff?style=flat-square)
-
-#### [zakon.help: laws and official documents user-friendly database (Ukraine)]
-
-*A website intended to be a handy tool for those who use state laws on daily basis*
-
-Site has a tons of different features to be implemented. Some prominent ones:
-
-- all state laws are kept in actual state *automatically* by utilising all possible sources (APIs, parsing print versions, parsing HTML versions etc)
-- user can switch document versions (editions) in one click
-- user can comment any law published. Such comments are saved across all later versions
-- user can view a professional lawyers / official comments for each document
-- user can create a bookmarks and have an easy access to them from their Cabinet
-- site Content Managers have a flexible yet powerful taxonomy tools to keep all content in order
-- site Content Managers have a tool to make changes to documents while keeping the original content untouched
-- third party authors can publish their own laws-related books/articles and provide either paid or free access to read them
-
-*Stack:*
-![PHP](https://img.shields.io/badge/PHP-4F5B93?style=flat-square)
-![VUE](https://img.shields.io/badge/VUE-42d392?style=flat-square)
-![YII](https://img.shields.io/badge/Yii_PHP-83c933?style=flat-square)
+📫 **[dna.ray@gmail.com](mailto:dna.ray@gmail.com)** · Telegram **@ampersand_i**
 
 ---
 
-### 🛠️ Tech Stack & Toolbelt
+### Selected work
 
-*   **Languages:** PHP, Python, modern JavaScript / TypeScript.
-*   **Frameworks & Ecosystems:** Advanced Drupal 7+, Laravel, FastAPI, Vue.js.
-*   **Databases & Caching:** MySQL, SQL, PostgreSQL.
-*   **Tools & DevOps:** Docker, Webpack, Git, Bash automation, CI/CD pipelines.
-*   **Design & 3D:** Adobe Photoshop / Illustrator, Cinema 4D.
+Each links to a write-up of the architecture and the engineering decisions behind it.
+
+#### 🐻 [LittleBearWorks](https://github.com/BaldCatDev-Inc/littlebearworks-showcase) — home services marketplace
+`Laravel 12` `PHP 8.3` `Vue 3` `Inertia` `Filament` `Docker`
+
+A contract freezes a snapshot of the service as it was agreed, so a provider editing their
+price later cannot rewrite past deals. Status changes are append-only events rather than
+assignments. Money moves through an immutable ledger, each entry carrying the balance
+that followed it, written inside a transaction with the wallet row locked.
+
+#### ⚖️ [zakon.help](https://github.com/BaldCatDev-Inc/zakon-showcase) — Ukrainian legislation, kept current
+`PHP` `MySQL` `LiqPay` `Monobank` `Telegram API` — [live](https://zakon.help/)
+
+I inherited this one as *"nothing works, please fix it"*: a PHP 5 codebase with logic in flat
+scripts and a folder named `___OBSOLETE`. Rather than rewrite a site that could not go down, I
+grew a proper object layer inside it — ~105 classes, ~21,500 lines — over a legacy base of
+around 79,000. Every act is kept current automatically from the parliament's own sources, past
+editions stay addressable, and commentary anchored to a paragraph survives every later edition
+of the law it explains.
+
+#### 🛡 [PRO100](https://github.com/BaldCatDev-Inc/pro100-showcase) — insurance platform
+`Drupal 9` `SOAP` `UPC` `Platon` `GitHub Actions`
+
+Insurance products as discoverable plugins, with coverage tiers and limits declared in YAML so
+a new package ships without a deployment. A policyholder cabinet reading contracts and claims
+straight from the insurer's internal system over SOAP, self-service registration gated on
+matching the insurer's own records, and card payments through two acquirers with PDF receipts
+for the finance department. In production 2020–2023 at 1,000–2,000 payments a day.
+
+#### 🛠 [Pomogashka](https://github.com/BaldCatDev-Inc/pomogashka-showcase) — services marketplace
+`Drupal 9` `Vue` `LiqPay` `NovaPay` — [live](https://pomogashka.com.ua/)
+
+Payment gateways as drop-in plugins, toggled from the admin panel without a deploy. A
+hand-written REST layer replacing Views where the generated JSON gave neither the query control
+nor the response shape the front end needed. Visibility in search is earned: an incomplete
+profile is capped below the listing threshold no matter how many optional fields it fills.
 
 ---
 
-### 🧠 Engineering Philosophy
+### Toolbelt
 
-> *"If it isn't explicitly validated, it is broken."*
-
-I treat software development as an exact craft. Whether I am architecting a sandbox environment, refactoring a legacy module, or designing complex visual assets, I focus on the underlying logic and system behavior. I don't just write code that works; I build systems that are bulletproof against failure, transparent to profile, and clean to maintain.
+**Languages** PHP 8, JavaScript, SQL
+**Frameworks** Laravel, Drupal 7–10, Vue 3, Inertia, Filament
+**Data** MySQL, PostgreSQL
+**Ops** Docker, GitHub Actions, nginx, Bash
+**Also** Photoshop, Illustrator, Cinema 4D — a designer's eye, occasionally useful
 
 ---
 
-📫 **How to reach me:** [dna.ray@gmail.com](mailto:dna.ray@gmail.com) / @ampersand_i [TG]
+### How I work
+
+I like problems where correctness is checkable: a payment that must not be taken twice, a state
+machine that must not skip a step, a query that must not quietly return the wrong rows. I would
+rather write the boring safeguard than the clever shortcut, and rather ask what happens on the
+second webhook than find out in production.
+
+Much of what I have built has been maintained by someone else afterwards, or by me two years
+later — so I optimise for the version of this code that gets read, not the one that gets
+written.
