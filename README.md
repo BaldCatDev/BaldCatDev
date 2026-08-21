@@ -8,9 +8,7 @@ two concurrent charges must not interleave, a legal reference that is wrong if i
 stale, a contract that must still mean what it meant on the day it was signed. Deep in Drupal,
 currently working in Laravel.
 
-<!-- ЗАПОЛНИТЬ ПЕРЕД ПУБЛИКАЦИЕЙ — см. список вопросов
-**Available for remote work** · UTC+2 · full-time or contract · English B2
--->
+**Open to remote work** · Kyiv, UTC+2 · full-time or contract · English B2
 
 📫 **[dna.ray@gmail.com](mailto:dna.ray@gmail.com)** · Telegram **@ampersand_i**
 
