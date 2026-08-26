@@ -18,7 +18,7 @@ currently working in Laravel.
 
 Each links to a write-up of the architecture and the engineering decisions behind it.
 
-#### 🐻 [LittleBearWorks](https://github.com/BaldCatDev-Inc/littlebearworks-showcase) — home services marketplace
+#### 🐻 [LittleBearWorks](https://github.com/BaldCatDev/littlebearworks-showcase) — home services marketplace
 `Laravel 12` `PHP 8.3` `Vue 3` `Inertia` `Filament` `Docker`
 
 A contract freezes a snapshot of the service as it was agreed, so a provider editing their
@@ -26,7 +26,7 @@ price later cannot rewrite past deals. Status changes are append-only events rat
 assignments. Money moves through an immutable ledger, each entry carrying the balance
 that followed it, written inside a transaction with the wallet row locked.
 
-#### ⚖️ [zakon.help](https://github.com/BaldCatDev-Inc/zakon-showcase) — Ukrainian legislation, kept current
+#### ⚖️ [zakon.help](https://github.com/BaldCatDev/zakon-showcase) — Ukrainian legislation, kept current
 `PHP` `MySQL` `LiqPay` `Monobank` `Telegram API` — [live](https://zakon.help/)
 
 I inherited this one as *"nothing works, please fix it"*: a PHP 5 codebase with logic in flat
@@ -36,7 +36,7 @@ around 79,000. Every act is kept current automatically from the parliament's own
 editions stay addressable, and commentary anchored to a paragraph survives every later edition
 of the law it explains.
 
-#### 🛡 [PRO100](https://github.com/BaldCatDev-Inc/pro100-showcase) — insurance platform
+#### 🛡 [PRO100](https://github.com/BaldCatDev/pro100-showcase) — insurance platform
 `Drupal 9` `SOAP` `UPC` `Platon` `GitHub Actions`
 
 Insurance products as discoverable plugins, with coverage tiers and limits declared in YAML so
@@ -45,7 +45,7 @@ straight from the insurer's internal system over SOAP, self-service registration
 matching the insurer's own records, and card payments through two acquirers with PDF receipts
 for the finance department. In production 2020–2023 at 1,000–2,000 payments a day.
 
-#### 🛠 [Pomogashka](https://github.com/BaldCatDev-Inc/pomogashka-showcase) — services marketplace
+#### 🛠 [Pomogashka](https://github.com/BaldCatDev/pomogashka-showcase) — services marketplace
 `Drupal 9` `Vue` `LiqPay` `NovaPay` — [live](https://pomogashka.com.ua/)
 
 Payment gateways as drop-in plugins, toggled from the admin panel without a deploy. A
