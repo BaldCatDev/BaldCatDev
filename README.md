@@ -10,7 +10,7 @@ currently working in Laravel.
 
 **Open to remote work** · Kyiv, UTC+2 · full-time or contract · English B2
 
-📫 **[dna.ray@gmail.com](mailto:dna.ray@gmail.com)** · Telegram **@ampersand_i**
+📫 **[the@@baldcat.dev](mailto:the@@baldcat.dev)** · Telegram **@ampersand_i**
 
 ---
 
